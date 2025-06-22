@@ -5,8 +5,12 @@ const token = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 
 axios.defaults.baseURL = 'https://notehub-public.goit.study/api';
 
-export const getSingleNote = async (id: string) => {
-  const res = await axios.get<Note>(`/notes/${id}`);
+export const fetchNoteById = async (id: string) => {
+  const res = await axios.get<Note>(`/notes/${id}`,{
+    headers: {
+      Authorization: `Bearer ${token}`, 
+    },
+  });
   return res.data;
 };
 
@@ -47,3 +51,4 @@ export const deleteNote = async (noteId: number) : Promise<Note>  => {
   });
   return response.data;
 };
+
