@@ -28,4 +28,13 @@
 }
 
 .button:hover {
-    background-color: #0b5ed7; }
+    background-color: #0b5ed7; 
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 auto;
+    color: #212529;
+    text-align: center;
+}
