@@ -1,10 +1,8 @@
-export type Note = {
-  tag?: string;
-  id: string;
+export interface Note {
+  tag: string;
+  id: number;
   title: string;
   content: string;
-  categoryId: string;
-  userId: string;
   createdAt: string;
   updatedAt: string;
 };

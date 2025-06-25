@@ -1,12 +1,15 @@
 
 import css from "../notes/NotesPage.module.css";
 import NotesClient from './Notes.client';
+import { getNotes } from '../../lib/api'
+import type { NotesResponse } from '../../types/note';
 
-export default function NotesPage() {
+export default async function NotesPage() {
+  const initialData: NotesResponse = await getNotes('', 1); 
   return (
-    <div>   
+    <div>
       <h2 className={css.title}>Notes</h2>
-      <NotesClient />
+      <NotesClient initialData={initialData} />
     </div>
   );
 }

@@ -5,7 +5,7 @@ const token = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 
 axios.defaults.baseURL = 'https://notehub-public.goit.study/api';
 
-export const fetchNoteById = async (id: string) => {
+export const fetchNoteById = async (id: number) => {
   const res = await axios.get<Note>(`/notes/${id}`,{
     headers: {
       Authorization: `Bearer ${token}`, 
