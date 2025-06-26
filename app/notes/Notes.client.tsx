@@ -35,7 +35,8 @@ export default function NotesClient({ initialData }: NotesClientProps) {
     queryKey: ["notes", activeSearch, currentPage],
     queryFn: () => getNotes(activeSearch, currentPage),
     placeholderData: keepPreviousData,
-    initialData,
+
+    initialData: initialData ?? null,
   });
 
   return (
