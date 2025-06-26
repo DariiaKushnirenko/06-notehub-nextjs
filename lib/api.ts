@@ -21,6 +21,8 @@ export const getNotes = async (search: string, page: number): Promise<NotesRespo
     params.search = search;
   }
 
+  console.log("TOKEN:", token);
+
   const response = await axios.get<NotesResponse>("/notes", {
     params,
     headers: {
